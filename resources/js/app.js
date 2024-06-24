@@ -11,6 +11,7 @@ import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import { i18nVue } from 'laravel-vue-i18n'; 
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -32,6 +33,12 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(vuetify)
+            .use(i18nVue, { 
+                resolve: async lang => {
+                    const langs = import.meta.glob('../../lang/*.json');
+                    return await langs[`../../lang/${lang}.json`]();
+                }
+            })
             .mount(el);
     },
     progress: {
