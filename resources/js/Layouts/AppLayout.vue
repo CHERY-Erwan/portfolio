@@ -1,14 +1,11 @@
 <template>
-<v-card>
+<v-card class="min-h-screen">
     <v-layout>
-        <v-app-bar title="Application bar"></v-app-bar>
-
         <v-navigation-drawer
             v-model="drawer"
             :rail="rail"
             permanent
-            theme="dark"
-            class="bg-deep-purple"
+            color="surfacelighter"
         >
             <v-list-item
                 :class="rail ? 'ml-2 mt-2' : 'ml-1 mt-1'"
@@ -36,7 +33,7 @@
 
             <template v-slot:append>
                 <div class="pa-2">
-                    <v-btn block>
+                    <v-btn block color="primary">
                         <v-icon v-if="rail">mdi-logout</v-icon>
                         <span v-else>{{ $t('logout') }}</span>
                     </v-btn>
