@@ -18,6 +18,14 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            primary: '#5c6ac4',
+            secondary: '#ecc94b',
+            ternary: {
+                100: '#1c1b1e',
+                200: '#25242a',
+            }
+        }
     },
 
     plugins: [forms, typography],

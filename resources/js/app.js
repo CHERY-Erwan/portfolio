@@ -23,6 +23,19 @@ const vuetify = createVuetify({
     icons: {
         defaultSet: 'mdi',
     },
+    theme: {
+        defaultTheme: 'dark',
+        themes: {
+            dark: {
+                colors: {
+                    surface: '#121212',
+                    surfacelighter: '#212121',
+                    primary: '#470691',
+                    secondary: '#424242',
+                }
+            }
+        }
+    }
 })
 
 createInertiaApp({
